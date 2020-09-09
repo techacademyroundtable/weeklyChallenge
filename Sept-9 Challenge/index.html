@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        div {
+            width: 300px;
+            height: auto;
+            margin: 0px auto;
+            border: 2px solid black;
+            padding: 5px;
+        }
+    </style>
+    <div>
+        Create a function that takes an array of numbers and return both the minimum and maximum numbers, in that order.
+        <br> array = [9,10,500,1,68]
+        <br><button onclick="minMax([9,10,500,1,68])">Click me</button>
+        <p id="answer"></p>
+    </div>
+    <script>
+
+        function minMax(arr) {
+            const min = Math.min(...arr);
+            const max = Math.max(...arr);
+            const answer = [min,max]
+            document.getElementById("answer").innerHTML = "["+ answer +"]";
+        }
+
+    </script>
+</body>
+
+</html>
