@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>Create a function that takes a
+            number as an argument. Add up
+            all the numbers from 1 to the
+            number you passed to the function</p>
+        <input type="text" id="num">    
+        <button onclick="myFunction(10)">Click me!</button>
+        <h2 id="answer"></h2>
+    </div>
+
+    <script>
+        function myFunction() {
+            let num = document.getElementById("num").value;
+            let sum = 0;
+            for (let i = 1; i <= num; i++) {
+                console.log(i);
+                sum += i;
+            }
+            
+            document.getElementById("answer").innerHTML = sum;
+        }
+    </script>
+</body>
+
+</html>
