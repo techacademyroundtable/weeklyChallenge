@@ -1,0 +1,7 @@
+C:\Users\fmohe\Documents\GitHub\weeklyChallenge\Sept-26  Challenge 2\Sept-26  Challenge 2\obj\Debug\Sept-26  Challenge 2.csprojAssemblyReference.cache
+C:\Users\fmohe\Documents\GitHub\weeklyChallenge\Sept-26  Challenge 2\Sept-26  Challenge 2\obj\Debug\Sept-26  Challenge 2.csproj.CoreCompileInputs.cache
+C:\Users\fmohe\Documents\GitHub\weeklyChallenge\Sept-26  Challenge 2\Sept-26  Challenge 2\bin\Debug\Sept-26  Challenge 2.exe.config
+C:\Users\fmohe\Documents\GitHub\weeklyChallenge\Sept-26  Challenge 2\Sept-26  Challenge 2\bin\Debug\Sept-26  Challenge 2.exe
+C:\Users\fmohe\Documents\GitHub\weeklyChallenge\Sept-26  Challenge 2\Sept-26  Challenge 2\bin\Debug\Sept-26  Challenge 2.pdb
+C:\Users\fmohe\Documents\GitHub\weeklyChallenge\Sept-26  Challenge 2\Sept-26  Challenge 2\obj\Debug\Sept-26  Challenge 2.exe
+C:\Users\fmohe\Documents\GitHub\weeklyChallenge\Sept-26  Challenge 2\Sept-26  Challenge 2\obj\Debug\Sept-26  Challenge 2.pdb

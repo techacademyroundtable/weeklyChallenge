@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>Given an array of numbers,
+            return an array which
+            contains all the even
+            numbers in the original
+            array, which also have even indices.</p>
+            <h2>[1, 3, 2, 6, 4, 8]</h2>
+            <button onclick="myFunction([1, 3, 2, 6, 4, 8])">Click me!</button>
+        <h2 id="answer"></h2>
+    </div>
+    <script>
+        function myFunction(num) {
+            let newArray = []
+            for (var i = 0; i <= num.length; i += 2)
+                if (num[i] % 2 == 0)
+                    newArray.push(num[i])
+            document.getElementById("answer").innerHTML = "[" + newArray + "]";
+        }
+    </script>
+
+</body>
+
+</html>
