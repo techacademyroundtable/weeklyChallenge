@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 300px;">
+        Given a total due and an array 
+        representing the amount of 
+        change in your pocket, determine 
+        whether or not you are able to 
+        pay for the item. <br>Change will 
+        always be represented in the 
+        following order: 
+        quarters, dimes, nickels, pennies.
+        <br>2 Quarters, 100 dimes, 0 nickles, and 0 pennies. 
+        <br>The item cost $5.25.
+        <button onclick="myFunction([2,100,0,0],5.25)">Click me!</button>
+        <h2 id="answer"></h2>
+    </div>
+
+    <script>
+
+        function myFunction(change, total){
+           var totalChange = change[0] * .25 + change[1] * .10 + change[2] * .05 + change[3] * .01;
+           console.log(totalChange);
+           document.getElementById("answer").innerHTML = totalChange >= total; 
+        }
+
+    </script>
+</body>
+</html>
