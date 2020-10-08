@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <p>Create a function that 
+            <br>takes two dates and 
+            <br>returns the number of 
+            <br>days between the first 
+            <br>and second date.</p>
+        <button onclick="solution()">Click me!</button>
+        <h2 id="answer"></h2>
+    </div>
+
+    <script>
+
+        function myFunction(date1, date2) {
+            // The getTime() method returns the number of milliseconds 
+            // between midnight of January 1, 1970 (Unix Epoch) and the specified date.
+            return (date2.getTime() - date1.getTime())/(1000*60*60*24) - 1; //86400000
+        }
+
+        function solution(){
+            document.getElementById("answer").innerHTML = myFunction(new Date('June 1, 2019'), new Date('June 20, 2019'))
+        }
+    </script>
+
+</body>
+</html>
