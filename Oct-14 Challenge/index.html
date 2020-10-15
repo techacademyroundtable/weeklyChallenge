@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>In language of choice, write a routine that reverses a string in place.</p>
+    <h3>String: <span id="result">Hello, World!</span></h3>
+    <button onclick="reverseString('Hello, World!')">Click to reverse!</button>
+<script>
+
+function reverseString(str) {
+    document.getElementById("result").innerHTML = str.split("").reverse().join("");
+}
+
+</script>
+
+</body>
+</html>
