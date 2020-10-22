@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div>
+    <p>Given a string, return true <br>
+        if the string is a palindrome<br>
+        and false if it isn’t. <br>
+        Include spaces and punctuation <br> 
+        in deciding if the string is a palindrome.  
+    </p>
+    <h3 id="result">Palindrome?</h3>
+    <input type="text" placeholder="palindrome" id="palindrome">
+    <button onclick="isPalindrome()">Click me</button>
+</div>
+
+
+<script>
+
+    // function isPalindrome() {
+    //     var text = document.getElementById("palindrome").value.toLowerCase();
+    //     //var result = document.getElementById("result").innerHTML;
+    //     if (text == text.split('').reverse().join('')) {
+    //         document.getElementById("result").innerHTML = "True";
+    //     } else {
+    //         document.getElementById("result").innerHTML = "false";
+    //     }
+    
+    // }
+
+    function isPalindrome() {
+        var text = document.getElementById("palindrome").value.toLowerCase();
+        var result = document.getElementById("result");
+        if (text == text.split('').reverse().join('')) {
+            result.innerHTML = "True";
+        } else {
+            result.innerHTML = "false";
+        }
+    
+    }
+
+
+</script>
+
+</body>
+</html>
