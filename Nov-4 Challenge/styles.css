@@ -1,0 +1,76 @@
+html {
+    margin: 0 auto;
+    background-color: rgba(163, 162, 162, 0.808);
+}
+
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+}
+.shell {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    background-color: blanchedalmond;
+    border-radius: 5px;
+}
+
+.card {
+    width: 275px;
+    height: 400px;
+    padding: 10px, 10px;
+    margin: 20px;
+    background-color: orange;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.inner-container {
+    width: 260px;
+    height: 375px;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+    /* box-shadow: 0 0 15px rgba(0,0,0,.5), inset 0 0 15px rgba(255, 255, 255, 0.5); */
+    margin: auto;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-container:hover{
+    box-shadow: 0 0 0 black;
+    border-bottom: 1px black;
+    border-left: .2px black;
+    border-right: .2px black;
+}
+
+.inner-container:hover img {
+    filter: grayscale(0%);
+    transform: rotateX(0deg);
+}
+
+img {
+    border-radius: 8px;
+    width: 240px;
+    transform: rotateX(13deg);
+    filter: grayscale(10%);
+}

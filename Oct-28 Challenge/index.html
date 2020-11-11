@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Temp Calculator</title>
+</head>
+<body>
+    <div class="shell">
+        <div class="container">
+            <div class="form">
+                <h2>Temperature Calculator</h2>
+                <div class="output-window">
+                    <h1 id="output"></h1>
+                </div>
+                <input type="text" id="input" placeholder="enter degrees">
+                <select id="select">
+                    <option value="fahrenheit">&#176;F</option>
+                    <option value="celsius">&#176;C</option>
+                </select>
+                <br>
+                <button onclick="convert()">Convert</button>
+                <button id="clear" onclick="clearFields()">Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
