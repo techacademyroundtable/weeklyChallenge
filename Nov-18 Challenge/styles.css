@@ -1,0 +1,70 @@
+body {
+    margin: 0 auto;
+    display: flex;
+}
+
+.shell {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    min-width: 600px;
+    min-height: 600px;
+}
+
+.cell {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    padding: 20px;
+    float: right;
+}
+
+input{
+    padding: 3px;
+    margin-bottom: 10px;
+    border-radius: 4px 0 0 4px;
+}
+
+#add-name {
+    height: 25.2px;
+    border-radius: 0 4px 4px 0;
+}
+
+#clear {
+    color: white;
+    background-color: red;
+    width: 80px;
+    margin: 10px 3px;
+    border-radius: 2px;
+}
+
+#divide:disabled {
+    background-color: gray;
+}
+
+#divide {
+    color: white;
+    background-color: green;
+    width: 80px;
+    margin: 10px 3px;
+    border-radius: 2px;
+
+}
+
+
+#display-box {
+    width: 175px;
+    height: 300px;
+    border: 1px solid black;
+    text-align: center;
+    overflow: hidden;
+}
+
+.name {
+    margin: 8px 0;
+    font-family: fantasy;
+}
