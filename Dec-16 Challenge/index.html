@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="shell">
+        <div class="main-container">
+            <div class="card-container">
+                <div id="card">
+                    <h1 id="name">Name</h1>
+                    <h1 id="job-title">Job Title</h1>
+                    <h3 id="phone">Phone</h3><h3 id="email">Email</h3>
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="column">
+                    <p>Name: <span><input type="text" name="name" id="name-input"></span></p>
+                    <p>Title: <span><input type="text" id="title-input"></span></p>
+                    <p>Phone: <span><input type="text" id="phone-input"></span></p>
+                    <p>Email: <span><input type="text" id="email-input"></span></p>
+                    <button id="create-btn" onclick="createCard()">Create</button>
+                    <button id="clear-btn" onclick="clearFields()">Clear</button>
+                </div>
+                <div class="column color-column">
+                    <div class="row">
+                        <h2>Choose Card Background:</h2>
+                        <select id="card-back-select">
+                            <option value="#5f5ff1">Blue</option>
+                            <option value="#f79e9e">Red</option>
+                            <option value="#ebc57e">Orange</option>
+                            <option value="#6ae26a">Green</option>
+                        </select>
+                    </div>
+                    <div class="color-row">
+                        <div class="choice-blue"><p>Blue</p></div>
+                        <div class="choice-red"><p>Red</p></div>
+                        <div class="choice-orange"><p>Orange</p></div>
+                        <div class="choice-green"><p>Green</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+#shell{
+    background-color: cadetblue;
+    width:1000px;
+    height: 200px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.section{
+    border: 1px solid black;
+    width: 400px;
+    height: 150px;
+    padding-left: 10px;
+}
+
+p {
+    margin: 6px;
+}
+
+/* #fifteen, #eighteen, #twenty, #twenty-five{
+    grid-area: button;
+    border-radius: 8px;
+    box-shadow: inset 5px 5px 0px rgba(0,0,0,0.4)
+} */
+
+button{
+    grid-area: button;
+}
+
+.custom-tip{
+    grid-area: header;
+}
+
+.tip-radio{
+    grid-area: radio;
+}
+
+.custom-tip{
+    grid-area: input;
+}
+
+/* .tip-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    height: 300px;
+    width: 400px;
+    /* grid-template-areas: 
+        "header header header header"
+        "button button button button"
+        "button button button button"
+        "header header header header"
+        "input input input input"
+        "radio radio radio radio"; 
+}  */
+
+#output{
+    width: 160px;
+    height: 20px;
+    background-color: white;
+}
+
+.active {
+    color: red;
+}

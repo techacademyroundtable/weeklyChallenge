@@ -1,0 +1,45 @@
+<!-- This week you are tasked with building a tip calculator. Here are the program requirements:
+1. The app must have an input field where the user can enter the total cost of the meal.
+2. There should be 3-4 options for tips (15%,18% ,20%), as well as an input for a custom tip.
+3. The custom tip input should allow an input of either a percentage or dollar amount. (best to create a switch/checkbox to switch between the options)
+4. Output window to display total.
+5. A button to calculate the total, and a button to clear the input. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="shell">
+        <div class="section">
+            <p>Enter cost of meal:</p>
+            <input type="text" id="input">
+            <p>Total:</p>
+            <div id="output"></div>
+            <button type="button" onclick="calculate()">Calculate</button>
+            <button type="button" onclick="clearInput()">Clear</button>
+        </div>
+        <div class="section">
+            <p class="tip-header">Desired Tip Percentage</p>
+            <div class="tip-container">
+                <button type="button" value=".15"id="fifteen">15%</button>
+                <button type="button" id="eighteen">18%</button>
+                <button type="button" id="twenty">20%</button>
+                <button type="button" id="twenty-five">25%</button>
+                <p class="tip-header">Custom Tip</p>
+                <input id="custom-tip"type="number">
+                <input id="percent-radio" type="radio" value="percent">
+                <label for="percent" value="percent">Percent</label>
+                <input id="dollar-radio" type="radio" value="dollar">
+                <label for="dollar" value="dollar">Dollar</label>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

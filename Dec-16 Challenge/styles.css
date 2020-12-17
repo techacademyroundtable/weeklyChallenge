@@ -1,0 +1,114 @@
+.main-container{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.5);
+    width: 1000px;
+    height: 700px;
+}
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+    width: 100%;
+    height: 50%;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgb(223, 223, 223);
+    width: 100%;
+    height: 50%;
+}
+
+.column{
+    width: 45%;
+    height: 80%;
+    background-color: gray;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.column.color-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.color-row{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    align-items: space-between;
+}
+
+#card{
+    background-color: white;
+    text-align: center;
+    width: 500px;
+    height: 250px;
+}
+
+#create-btn, #clear-btn {
+    width: 120px;
+    height: 40px;
+    color: white;
+    font-size: 20px;
+}
+
+#create-btn{
+    background-color: green;
+}
+
+#clear-btn{
+    background-color: red;
+}
+
+.choice-blue {
+    background-color: #5f5ff1;
+}
+
+.choice-green {
+    background-color: #6ae26a;  
+}
+
+.choice-red {
+    background-color: #f79e9e;  
+}
+
+.choice-orange {
+    background-color: #ebc57e;
+}
+
+.choice-blue, .choice-red, .choice-orange, .choice-green{
+    width: 175px;
+    height: 80px;
+    margin-top: 15px;
+    text-align: center; 
+}
+
+h2{
+    margin: 5px auto;
+    color: white;
+}
+
+h3 {
+    display: inline-block;
+}
+
+#phone {
+    float: left;
+    margin-left: 40px;
+}
+
+#email {
+    float: right;
+    margin-right: 40px;
+}
