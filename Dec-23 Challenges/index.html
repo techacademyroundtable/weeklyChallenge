@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Challenge 1</h2>
+    <p>You will be given an array of drinks,
+        with each drink being an object with
+        two properties: name and price. Create
+        a function that has the drinks array
+        as an argument and return the drinks
+        objects sorted by price in ascending
+        order.</p>
+
+    <h2>Challenge 2</h2>
+    <p>Given an amount of money and an array
+        of coins denominations, create a
+        function that counts how many different
+        ways you can make change of the given
+        money.</p>
+
+
+    <script>
+        ///////Challenge 2///////
+        function coinsCombinations(money, coins, index = 0) {
+            if (money < 0) return 0;
+            if (!money) return 1;
+
+            var ans = 0;
+            for (var i = index; i < coins.length; i++) {
+                ans += coinsCombinations(money - coins[i], coins, i);
+            }
+
+            return ans;
+        }
+        console.log(coinsCombinations(20, [3, 1, 5]));
+
+
+        ///////Challenge 1///////
+        var drinks = [
+            { name: "lemonade", price: 3 },
+            { name: "Coke", price: 4 },
+            { name: "Wine", price: 11 },
+            { name: "Beer", price: 7 }
+        ];
+
+        drinks.sort(function(a,b){   //<- this is a compare function, by default
+            return b.price - a.price;//array.sort() will convert values to strings
+        });                         //and sort based on Unicode.When the sort() method 
+        console.log(drinks);        //compares two values, it sends the values to the 
+                                    //compare function, and sorts the values according 
+                                    //to the returned (negative, zero, positive) value.
+    </script>                       
+</body>
+
+</html>

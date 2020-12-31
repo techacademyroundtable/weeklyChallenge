@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        This week you are tasked with creating a <br>
+        function that takes a number as an argument <br>
+        and returns the appropriate error message. <br>
+        You should do this without using the switch or if statements.  <br><br>
+ 
+The input error will be 1 to 5:<br><br>
+ 
+1 >> "Check the fan"<br>
+2 >> "Emergency stop"<br>
+3 >> "Pump Error"<br>
+4 >> "Air leakage"<br>
+5 >> "Temperature Sensor Error"<br><br>
+ 
+For any other value, return 101 (you can use an if statement here).
+
+    </p>
+
+    <script>
+        function error(num) {
+            var errors = {
+                1: "Check the fan",
+                2: "Emergency stop",
+                3: "Pump Error",
+                4: "Air Leakage",
+                5: "Temperature Senser Error"
+            }
+            if (!errors[num]){
+                return "101";
+            }
+            return errors[num];
+        }
+
+        console.log(error(4));
+
+
+
+
+    </script>
+</body>
+</html>
