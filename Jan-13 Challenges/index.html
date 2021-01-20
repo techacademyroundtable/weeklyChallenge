@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Take 2 strings s1 and s2 including <br>
+        only letters from a to z. Return <br>
+        a new sorted string, the longest <br>
+        possible, containing distinct letters, <br>
+        each taken only once - coming from s1 or s2.</p><br><br>
+
+    <p>Trolls are attacking your comment section!<br>
+        A common way to deal with this situation<br>
+        is to remove all of the vowels from the<br>
+        trolls' comments, neutralizing the threat.<br>
+        Your task is to write a function that<br>
+        takes a string and returns a new string<br>
+        with all vowels removed.</p>
+
+    <script>
+        //Challenge 1
+        function longest(s1, s2) {
+            var s3 = s1 + s2;
+            var stringArray = s3.split("");
+            stringArray = stringArray.sort().filter(function (element, index, array) {
+                return element !== array[index - 1];
+            });
+            return stringArray.join("");
+        }
+
+        console.log(longest("xyaabbbccccdefww","xxxxyyyyabklmopq"))
+
+       
+        //Challenge 2
+        function disemvowel(str) {
+            return str.replace(/a|e|i|o|u/gi, ""); // string.replace takes two arguments
+        }                                          // 1 string to replace, and 1 to replace it
+                                                   // /a|e|i|o|u/gi is a regular expression.
+                                                   // everthing between the // represents strings you are 
+                                                   // trying to match. g means global search (all) 
+                                                   // and i means case insensitive
+        console.log(disemvowel("This website is for losers LOL!"))
+   
+   </script>                                      
+</body>
+
+</html>

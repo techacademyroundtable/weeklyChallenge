@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>
+        Challenge 1<br>
+        You are asked to square every digit of a number and concatenate them.<br>
+        For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.<br>
+        Note: The function accepts an integer and returns an integer<br>
+        <br><br>
+        Challenge 2<br>
+        You are required to, given a string, replace every letter with its position in the alphabet.<br>
+        If anything in the text isn't a letter, ignore it and don't return it<br>
+        For example, alphabetPosition("The sunset sets at twelve o' clock.") will return "20 8 5 19 21 14 19 5 20 19 5
+        20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"<br>
+        Good luck, happy coding, and happy new year!<br>
+    </p>
+
+    <script>
+
+
+        //Challenge 1
+        function squareDigits(num) {
+            var numArray = num.toString().split("").map(x => parseInt(x));
+            var result = []
+            for (var i in numArray) {
+                result.push(numArray[i] ** 2);
+            }
+            return parseInt(result.join(""));
+        }
+
+        console.log(squareDigits(91191));
+
+     
+     
+        //Challenge 2
+        function alphabetPosition(text) {
+            var alph = {
+                'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7,
+                'h': 8, 'i': 9, 'j': 10, 'k': 11, 'l': 12, 'm': 13,
+                'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19,
+                't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26
+            }
+            var stringArray = text.toLowerCase().split("");
+            var ans = [];
+            for (var i = 0; i < stringArray.length; i++) {
+                if (alph.hasOwnProperty(stringArray[i])) {
+                    ans.push(alph[stringArray[i]])
+                }
+            }
+            return ans.join(" ");
+        }
+
+        console.log(alphabetPosition("Hello, World!"));
+
+    </script>
+</body>
+
+</html>

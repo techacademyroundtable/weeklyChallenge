@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Write a function that will <br>
+        return the count of distinct <br>
+        case-insensitive alphabetic <br>
+        characters and numeric digits <br>
+        that occur more than once in <br>
+        the input string. The input <br>
+        string can be assumed to contain <br>
+        only alphabets (both uppercase and lowercase) <br>
+        and numeric digits.</p><br><br><br>
+
+    <p>You are going to be given a word. <br>
+        Your job is to return the middle <br>
+        character of the word. If the word's <br>
+        length is odd, return the middle <br>
+        character. If the word's length is even, <br>
+        return the middle 2 characters.<br>
+        Note: You will only be running single <br>
+        words through this function, not multi-word <br>
+        strings.  </p>
+
+
+
+    <script>
+        //Challenge 1 
+        function duplicateCount(text) {
+            var nonUniqueChar = text.toLowerCase().split('').filter(function (item, i, ar) { return ar.indexOf(item) !== i; }).join('');
+            return nonUniqueChar.split('').filter(function (item, i, ar) { return ar.indexOf(item) === i; }).join('').length;
+
+        }
+
+        console.log(duplicateCount("aabbccdeff"));
+
+
+        //Challenge 2
+        // function getMiddle(s) {
+        //     var even = (s.length % 2 == 0)
+        //     if (even) {
+        //         return s[(s.length / 2) - 1] + s[s.length / 2];
+        //     }
+        //     else {
+        //         return s[(s.length - 1) / 2];
+        //     }
+        // }
+
+        function getMiddle(s) {
+            return (s.length % 2 == 0 ? s[(s.length / 2) - 1] + s[s.length / 2] : s[(s.length - 1) / 2])
+        }
+
+        console.log(getMiddle("Hello"));
+
+    </script>
+</body>
+
+</html>
