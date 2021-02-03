@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Challenge 1 <br>
+        Some people have been killed! <br>
+        You have managed to narrow <br>
+        the suspects down to just a <br>
+        few. Luckily, you know every <br>
+        person who those suspects have <br>
+        seen on the day of the murders.<br>
+        <br><br>
+        Given a dictionary with all the names of <br>
+        the suspects and everyone that they have <br>
+        seen on that day which may look like this:<br>
+        {<br>
+        'James': ['Jacob', 'Bill', 'Lucas'],<br>
+        'Johnny': ['David', 'Kyle', 'Lucas'],<br>
+        'Peter': ['Lucy', 'Kyle'] <br>
+        }<br>
+        and also a list of the names of the dead people:<br>
+        ['Lucas', 'Bill']<br>
+        <br>
+        return the name of the one killer.<br>
+    </p><br><br>
+
+    <p> Challenge 2<br>
+        You are tasked with creating a function <br>
+        that takes a variable 'language'(a string) <br>
+        as a parameter and outputs a 'Welcome' <br>
+        greeting in that language. It should <br>
+        default to English if the language is not <br>
+        in the database, or in the event of an <br>
+        invalid input. Think of a way to store <br>
+        the languages as a database (eg an object).
+    </p>
+
+    <script>
+
+
+        //challenge 1
+        function greet(language) {
+            var greetings = {
+                'english': 'Welcome',
+                'czech': 'Vitejte',
+                'danish': 'Velkomst',
+                'dutch': 'Welkom',
+                'estonian': 'Tere tulemast',
+                'finnish': 'Tervetuloa',
+                'flemish': 'Welgekomen',
+                'french': 'Bienvenue',
+                'german': 'Willkommen',
+                'irish': 'Failte',
+                'italian': 'Benvenuto',
+                'latvian': 'Gaidits',
+                'lithuanian': 'Laukiamas',
+                'polish': 'Witamy',
+                'spanish': 'Bienvenido',
+                'swedish': 'Valkommen',
+                'welsh': 'Croeso'
+            }
+            return (!greetings[language] ? greetings['english'] : greetings[language])
+        }
+
+        //challenge 2
+
+        // Suspect info:
+        // {
+        //     'James': ['Jacob', 'Bill', 'Lucas'],
+        //     'Johnny': ['David', 'Kyle', 'Lucas'],
+        //     'Peter': ['Lucy', 'Kyle']
+        // }
+        //
+        //  Dead:
+        // ['Lucas', 'Bill']
+
+        function killer(suspectInfo, dead) {
+            var killer = ''
+            Object.keys(suspectInfo).forEach(function (key) {
+                var count = 0
+                for (var i in dead) {
+                    if (suspectInfo[key].includes(dead[i])) {
+                        count += 1
+                    }
+                }
+                if (count == dead.length) {
+                    killer = key
+                }
+            })
+            return killer
+        }
+
+    </script>
+</body>
+
+</html>

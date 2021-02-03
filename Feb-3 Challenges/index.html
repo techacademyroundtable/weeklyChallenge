@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Challenge 1 <br>
+        Pete likes to bake some cakes. <br>
+        He has some recipes and ingredients. <br>
+        Unfortunately he is not good at math. <br>
+        Can you help him to find out how many <br>
+        cakes he could bake considering his recipes?<br>
+        <br>
+        Write a function cakes(), <br>
+        which takes the recipe (object) <br>
+        and the available ingredients (also an object) <br>
+        and returns the maximum number of cakes <br>
+        Pete can bake (integer). For simplicity there <br>
+        are no units for the amounts (e.g. 1 lb of<br>
+        flour or 200 g of sugar are simply 1 or 200). <br>
+        Ingredients that are not present in the objects,<br>
+        can be considered as 0.<br>
+        <br>
+        For example:<br>
+        // must return 2<br>
+        cakes({flour: 500, sugar: 200, eggs: 1}, {flour: 1200, sugar: 1200, eggs: 5, milk: 200});<br>
+        // must return 0<br>
+        cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar: 500, flour: 2000, milk: 2000});<br>
+    </p>
+    <br>
+    <br>
+    <p>Challenge 2<br>
+        Write a method that takes an array of <br>
+        integer-numbers and returns an array <br>
+        of the averages of each integer-number<br>
+        and his follower, if there is one.<br>
+        <br>
+        For example:<br>
+        Input: [ 1, 3, 5, 1, -10]<br>
+        Output: [ 2, 4, 3, -4.5]
+    </p>
+
+
+
+    <script>
+
+        //Challenge 1
+        function cakes(recipe, available) {
+            var recArray = Object.keys(recipe);
+            var avaArray = Object.keys(available);
+            var result = []
+            if (recArray.every(i => avaArray.includes(i))) {
+                Object.keys(recipe).forEach(function (key) {
+                    if (available.hasOwnProperty(key)) {
+                        result.push(available[key] / recipe[key])
+                    }
+                });
+                return Math.floor(result.sort(function (a, b) { return a - b })[0])
+            }
+            else {
+                return 0;
+            }
+        }
+
+
+        //Challenge 2
+        function averages(numbers) {
+            var final = [];
+            if (numbers) {
+                for (var i = 0; i < numbers.length - 1; i++) {
+                    final.push((numbers[i] + numbers[i + 1]) / 2);
+                }
+            }
+            return final;
+        }
+
+
+    </script>
+</body>
+
+</html>
