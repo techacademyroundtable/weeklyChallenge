@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        Challenge 1<br>
+        Write a function, which takes a non-negative <br>
+        integer (seconds) as input and returns the time in a human-readable<br>
+        format (HH:MM:SS)<br><br>
+
+        HH = hours, padded to 2 digits, range: 00 - 99<br>
+        MM = minutes, padded to 2 digits, range: 00 - 59<br>
+        SS = seconds, padded to 2 digits, range: 00 - 59<br>
+        The maximum time never exceeds 359999 seconds (99:59:59)<br><br>
+
+        Example:<br>
+        myFunction(86399) => 23:59:59<br>
+        myFunction(30) => 00:00:30<br>
+
+        Challenge 2 (aka the fizzbuzz test)<br>
+        Write a program that prints the numbers from 1 to 100. <br>
+        But for multiples of three print “Fizz” instead of the<br>
+        number and for the multiples of five print “Buzz”. <br>
+        For numbers that are multiples of both three and five print<br>
+        “FizzBuzz”.<br>
+    </p>
+</body>
+
+<script>
+
+    //Challenge 1
+    function humanReadable(seconds) {
+        var hours = Math.floor(seconds / 3600);
+        var mins = Math.floor((seconds - (hours * 3600)) / 60);
+        var secs = seconds - (hours * 3600) - (mins * 60);
+        return `${hours.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    console.log(humanReadable(90));
+
+    //Challenge 2
+    for (var i = 1; i < 101; i++) {
+        if (i % 15 == 0) console.log("FizzBuzz");
+        else if (i % 3 == 0) console.log("Fizz");
+        else if (i % 5 == 0) console.log("Buzz");
+        else console.log(i);
+    }
+</script>
+
+</html>

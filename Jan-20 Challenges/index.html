@@ -33,24 +33,24 @@
     <script>
         //Challenge 1 
         function duplicateCount(text) {
-            var nonUniqueChar = text.toLowerCase().split('').filter(function (item, i, ar) { return ar.indexOf(item) !== i; }).join('');
-            return nonUniqueChar.split('').filter(function (item, i, ar) { return ar.indexOf(item) === i; }).join('').length;
+            var nonUniqueChar = text.toLowerCase().split('').filter(function (item, i, ar) { return ar.indexOf(item) !== i; }); 
+            return nonUniqueChar.filter(function (item, i, ar) { return ar.indexOf(item) === i; }).join('').length;
 
         }
 
-        console.log(duplicateCount("aabbccdeff"));
+        console.log(duplicateCount("aabbbbBBbbccdeFffGGGG"));
 
 
-        //Challenge 2
-        // function getMiddle(s) {
-        //     var even = (s.length % 2 == 0)
-        //     if (even) {
-        //         return s[(s.length / 2) - 1] + s[s.length / 2];
-        //     }
-        //     else {
-        //         return s[(s.length - 1) / 2];
-        //     }
-        // }
+        // Challenge 2
+        function getMiddle(s) {
+            var even = (s.length % 2 == 0)
+            if (even) {
+                return s[(s.length / 2) - 1] + s[s.length / 2];
+            }
+            else {
+                return s[(s.length - 1) / 2];
+            }
+        }
 
         function getMiddle(s) {
             return (s.length % 2 == 0 ? s[(s.length / 2) - 1] + s[s.length / 2] : s[(s.length - 1) / 2])

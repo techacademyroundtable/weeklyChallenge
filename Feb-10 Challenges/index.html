@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Challenge 1<br>
+        A pangram is a sentence that contains every <br>
+        single letter of the alphabet at least once. <br>
+        For example, the sentence "The quick brown fox <br>
+        jumps over the lazy dog" is a pangram, because <br>
+        it uses the letters A-Z at least once (case is irrelevant).<br>
+        <br>
+        Given a string, detect whether or not it is a pangram. <br>
+        Return True if it is, False if not. Ignore numbers and punctuation.<br>
+        <br><br>
+        Challenge 2<br>
+        There is an array with some numbers. All numbers <br>
+        are equal except for one. Try to find it! It’s <br>
+        guaranteed that the array contains at least 3 numbers.<br><br>
+        findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2<br>
+        findUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55<br>
+    </p>
+
+
+    <script>
+
+        //Challenge 1 
+        function isPangram(s) {
+            var alphabet = "abcdefghijklmnopqrstuvwxyz";
+            s = s.toLowerCase().replace(/\s/g, ""); 
+            for (var i = 0; i < alphabet.length; i++) {
+                if (s.indexOf(alphabet[i]) === -1) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        //console.log(isPangram("The quick brown fox jumps over the lazy dog."))
+
+
+        //Challenge 2
+        function findUniq(arr) {
+            arr = arr.sort((a, b) => b - a);
+            return (arr[0] == arr[1] ? arr[arr.length - 1] : arr[0])
+        }
+
+        //console.log(findUniq([ 1, 1, 1, 2, 1, 1 ]));
+
+
+
+    </script>
+</body>
+
+</html>
