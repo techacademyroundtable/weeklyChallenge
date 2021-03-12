@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <P>
+        Challenge 1 <br>
+        In one line of code, write a <br>
+        function that takes in a collection <br>
+        of numbers as strings, and returns a collection<br>
+        of the same numbers as integers.<br><br>
+
+        Example:<br>
+        toNumArray(['1','2','3','4']) => [1,2,3,4]<br>
+        <br>
+
+        Challenge 2<br>
+        Write a function that, given a string of <br>
+        text (possibly with punctuation and line-breaks), <br>
+        returns an array of the top-3 most occurring words, <br>
+        in descending order of the number of occurrences.<br>
+        Matches should be case-insensitive, and the <br>
+        words in the result should be lowercased.<br>
+        Ties may be broken arbitrarily.<br>
+        If a text contains fewer than three unique words, <br>
+        then either the top-2 or top-1 words should be returned, or an<br>
+        empty array if a text contains no words.<br>
+        Example:<br>
+        topThreeWords("a a a b c c d d d d e e e e e") => ['e','d','a']
+    </P>
+
+    <script>
+
+        //Challenge 1
+        function toNumberArray(stringarray) {
+            return stringarray.map(Number);
+        }
+
+        //or
+
+        toNumberArray2 = stringarray => stringarray.map(Number);
+
+        console.log(toNumberArray(["1", "2", "3"]));
+        console.log(toNumberArray2(["1", "2", "3"]));
+
+
+
+        //Challenge 2
+        function topThreeWords(text) {
+            //convert to lower case, remove symbols and spaces, slit to array, remove spaces from array
+            text = text.toLowerCase().replace(/[^a-z|\s|']/g, '').split(" ").sort().filter(x => x.trim() != '');
+            console.log(text);
+            var counts = {};
+            //create dict with unique strings and their counts
+            text.forEach(x => counts[x] = (counts[x] || 0) + 1);
+            //create array of arrays containing key:value pairs from dict
+            console.log(counts);
+            counts = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+            console.log(counts);
+            //create an empty array to pass in results
+            var result = [];
+            //pass every element of the count array through a function to only grab the first element (the key)
+            counts.forEach(x => result.push(x[0]));
+            console.log(result);
+            //lastly,check if the rusult array contains anything that isn't a letter, then return result
+            return result.join('').replace(/[^a-z]/g, '').length == 0 ? [] : result.splice(0, 3)
+        }
+
+        console.log(topThreeWords("a a a  b  c c  d d d d  e e e e e"));
+        console.log(topThreeWords("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e"));
+        console.log(topThreeWords("  //wont won't won't "));
+        console.log(topThreeWords("  '  "))
+    </script>
+</body>
+
+</html>
