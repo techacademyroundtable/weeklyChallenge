@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Challenge 1<br>
+        Write a function that takes in a string, <br>
+        and returns a string incremented by 1.<br><br>
+
+        If the string already ends with a number, <br>
+        the number should be incremented by 1.<br>
+        If the string does not end with a number, <br>
+        the number 1 should be appended to the new string.<br><br>
+
+        Examples:<br>
+        Hello => Hello1<br>
+        Hello1 => Hello2<br>
+        Hello99 => Hello100<br><br>
+
+        Challenge 2<br>
+        Write a function that takes in an RGB decimal value, <br>
+        and returns the hexadecimal representation of that color.<br>
+        Valid decimal values for RGB are 0 - 255.<br><br>
+
+        Examples:<br>
+        rgbToHex(66,138,245) => #428af5<br>
+        rgbToHex(255,255,255) => #ffffff</p>
+
+
+    <script>
+
+        //Challenge 1
+        function incrementString(string) {
+            var regForNums = /[^a-z]/g;
+            var regForLets = /[a-z]/gi;
+            var nums;
+            if (isNaN(string[string.length - 1]) || string.length === 0) {
+                nums = 0;
+            }
+            else {                                                 
+                nums = string.match(regForNums).length > 1 ? string.match(regForNums).join('') : string.match(regForNums);
+            }                                               
+            return string.length != 0 ? (string.match(regForLets).join('')) + (parseInt(nums) + 1).toString().padStart(nums.length, 0) : '1';
+        }
+
+        console.log(incrementString('Hello'));
+        console.log(incrementString('Hello1'));
+        console.log(incrementString('Hello001'));
+        console.log(incrementString('Hello099'));
+        console.log(incrementString(''));
+
+        
+        
+        
+        
+        
+        //Challenge 2
+        function componentToHex(c) {
+            (c < 0) ? c = 0 : 
+            (c > 255) ? c = 255 : 
+            c = c;
+            var hex = c.toString(16).toUpperCase();
+            return hex.length == 1 ? "0" + hex : hex;
+        }
+
+        function rgb(r, g, b) {
+            return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+        }
+
+        console.log(rgb(255,55,0));
+    </script>
+</body>
+
+</html>
