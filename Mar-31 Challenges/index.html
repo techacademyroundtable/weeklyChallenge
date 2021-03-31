@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Challenge 1 <br />
+      Write a function that takes in 2 strings. If at least a<br />
+      portion of the first string can be rearranged to form the second
+      string,<br />
+      return true. Otherwise, return false. No punctuation or numbers will be<br />
+      used as input. <br /><br />
+
+      Examples: <br />
+      rearrange('rkqodlw', 'world') ==> True <br />
+      rearrange('huhbkiehlelbiuop', 'Hello') ==> True <br />
+      rearrange('katas', 'steak') ==> False <br /><br />
+
+      Challenge 2 <br />
+      You will need to write a regex (regular expression) that<br />
+      will validate a password to make sure it meets the following criteria:
+      At<br />
+      least six characters long contains a lowercase letter contains an<br />
+      uppercase letter contains a number Valid passwords will only be<br />
+      alphanumeric characters.<br />
+    </p>
+
+    <script>
+      // Challenge 1
+      function scramble(str1, str2) {
+        for (var i in str2) {
+          if (str1.includes(str2[i])) {
+            str1 = str1.replace(str2[i], "");
+            continue;
+          } else return false;
+        }
+        return true;
+      }
+
+      console.log(scramble('abhasdevsdllvo','hello'))
+      console.log(scramble('abhasdevsdl','hello'))
+      console.log(scramble('ehlo','hello'))
+
+      // Challenge 2
+      function validate(password) {
+        return /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?!.*[^a-zA-Z0-9]).{6}/.test(
+          password
+        );
+      }
+
+      console.log(validate('Password123'));
+      console.log(validate('password123'));
+      console.log(validate('Password'));
+      console.log(validate('P123'));
+    </script>
+  </body>
+</html>
