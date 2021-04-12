@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Challenge 1<br />
+      Given a standard English sentence passed in as a string, <br />
+      write a method that will return a sentence made up of the same words,
+      <br />
+      but sorted by their first letter. However, the method of sorting has a
+      twist to it:<br />
+      All words that begin with a lower case letter should be at the beginning
+      of the <br />
+      sorted sentence, and sorted in ascending order.<br />
+      All words that begin with an upper case letter should come after that,<br />
+      and should be sorted in descending order.<br />
+      If a word appears multiple times in the sentence, it should be returned
+      multiple times in the sorted sentence. <br />
+      Any punctuation must be discarded.<br /><br />
+
+      Example:<br />
+
+      sentenceSort("Hello my name is Forest and I love love love to code!") ==>
+      'and code is love love love name my to Forest Hello I'<br /><br />
+
+      Challenge 2 <br />
+      You are tasked with creating a tournament function. <br />
+      The input of this function will be an array of contestant's ranks (as
+      numbers). <br />
+      You must eliminate contestant in series of rounds comparing consecutive
+      <br />
+      pairs of ranks and store all initial and intermediate results in an
+      array.<br />
+
+      During one round, the lowest rank of a pair is eliminated while the
+      highest proceeds to the next round. <br />
+      This goes on until one contestant only is left. If the number of
+      contestants is odd, <br />
+      the last one of the current array becomes the first of the next round.<br />
+
+      At the end of the competition, return the results of all the rounds in the
+      form of an array of arrays.<br /><br />
+
+      Example:<br />
+
+      var contestants = [9,5,4,7,6,3,8,2]<br /><br />
+
+      tournament(contestants) ==> <br />
+      [ <br />
+      [9,5,4,7,6,3,8,2],<br />
+      [9,7,6,8],<br />
+      [9,8],<br />
+      [9] <br />
+      ]<br />
+    </p>
+  </body>
+
+  <script>
+    // Challenge 1
+    function sort(sentence) {
+      var senArray = sentence.replace(/[^a-zA-Z ]/g, "").split(" ");
+      var upperArray = senArray
+        .filter((x) => x[0] === x[0].toUpperCase())
+        .sort()
+        .reverse();
+      var lowerArray = senArray
+        .filter((x) => x[0] === x[0].toLowerCase())
+        .sort();
+      if (upperArray.length == 0) {
+        return lowerArray.join(" ");
+      } else if (lowerArray.length == 0) {
+        return upperArray.join(" ");
+      } else {
+        return lowerArray.join(" ") + " " + upperArray.join(" ");
+      }
+    }
+
+    console.log(sort("Hello my name is Forest and I love love love to code!"))
+
+    // Challenge 2
+    function tournament(array) {
+      if (array.length === 1) {
+        return [array];
+      }
+      var currentStep = [];
+      if (array.length % 2 !== 0) {
+        currentStep.push(array.slice(-1)[0]);
+      }
+      for (var i = 0; i < array.length - 1; i += 2) {
+        currentStep.push(Math.max(array[i], array[i + 1]));
+      }
+      return [array].concat(tournament(currentStep));
+    }
+
+    console.log(tournament([8, 5, 2, 6, 2, 6, 1, 4]));
+  </script>
+</html>
